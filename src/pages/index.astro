@@ -1,22 +1,23 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import Badge from "../components/Badge.astro";
-import SectionContainer from "../components/SectionContainer.astro";
-import LinkedInIcon from "../components/icons/LinkedIn.astro";
-import SocialPill from "../components/SocialPill.astro";
-import GitHubIcon from "../components/icons/GitHub.astro";
-import MailIcon from "../components/icons/Mail.astro";
-import Experience from "../components/Experience.astro";
-import Briefcase from "../components/icons/Briefcase.astro";
-import CodeIcon from "../components/icons/Code.astro";
-import AboutMeIcon from "../components/icons/AboutMe.astro";
-import Projects from "../components/Projects.astro";
-import AboutMe from "../components/AboutMe.astro";
+import Layout from "@/layouts/Layout.astro";
+
+import AboutMe from "@/components/AboutMe.astro";
+import Badge from "@/components/Badge.astro";
+import Briefcase from "@/components/icons/Briefcase.astro";
+import CodeIcon from "@/components/icons/Code.astro";
+import Experience from "@/components/Experience.astro";
+import GitHubIcon from "@/components/icons/GitHub.astro";
+import LinkedInIcon from "@/components/icons/LinkedIn.astro";
+import MailIcon from "@/components/icons/Mail.astro";
+import ProfileCheck from "@/components/icons/ProfileCheck.astro";
+import Projects from "@/components/Projects.astro";
+import SectionContainer from "@/components/SectionContainer.astro";
+import SocialPill from "@/components/SocialPill.astro";
 ---
 
 <Layout
-  title="Porfolio de Francisco - Desarrollador y Programador Full Stack"
-  description="Francisco Mancuello, Desarrollador y Programador Full Stack de Ciudad del Este, Paraguay. Especializado en crear aplicaciones únicas."
+  title="Porfolio de midudev - Desarrollador y Programador Web con 15 años de experiencia"
+  description="Contrata a midudev para crear tu aplicación web o móvil. Desarrollador Web y Creador de Contenido. Especializado en crear aplicaciones únicas."
 >
   <main class="px-4">
     <SectionContainer class="py-6 pb-32">
@@ -26,30 +27,35 @@ import AboutMe from "../components/AboutMe.astro";
         alt="MranDvX photo"
       />
       <h1
-        class="text-white text-3xl md:text-4xl font-bold flex flex-row gap-x-4 pb-6 lg:pb-10"
+        class="text-gray-900 dark:text-white text-3xl md:text-4xl font-bold flex flex-row gap-x-4 pb-6 lg:pb-10"
       >
-        Soy Francisco Mancuello<a
-          href="https://linkedin.com/in/franmavazq"
+        Soy Francisco Mancuello <a
+          href="https://linkedin.com/in/mrandvx"
           target="_blank"
           rel="noopener"
-          class="flex justify-center items-center"
+          class="flex justify-center items-center hover:scale-105 transition"
         >
           <Badge>Disponible para trabajar</Badge>
         </a>
       </h1>
-      <h1 class="text-xl lg:text-2xl text-balance max-w-[700px]">
-        +7 años de experiencia,<span class="text-yellow-200">
-          Desarrollador y Programador Full Stack
-        </span>de Ciudad del Este, Paraguay.
-      </h1>
-      <h2 class="text-xl lg:text-2xl text-balance max-w-[700px]">
-        <span class="text-sky-200">
-          Especializado en crear aplicaciones únicas y atractivas.
-        </span>
+      <h2
+        class="text-xl lg:text-2xl text-balance max-w-[700px] text-black dark:text-white"
+      >
+        <span>+7 años de experiencia.</span><span
+          class="text-yellow-800 dark:text-yellow-200"
+        >
+          Desarrollador y Programador Full Stack</span
+        >
+        .<span class="text-red-800 dark:text-red-200">
+          De Ciudad del Este, Paraguay</span
+        >.
+        <span class="text-sky-800 dark:text-sky-200"
+          >Especializado en crear aplicaciones únicas y atractivas.</span
+        >
       </h2>
 
       <nav class="flex gap-4 mt-8 flex-wrap">
-        <SocialPill href="https://linkedin.com/in/franmavazq">
+        <SocialPill href="https://linkedin.com/in/mrandvx">
           <LinkedInIcon class="size-4 md:size-6" />
           LinkedIn
         </SocialPill>
@@ -65,7 +71,9 @@ import AboutMe from "../components/AboutMe.astro";
     </SectionContainer>
 
     <SectionContainer id="experiencia">
-      <h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center">
+      <h2
+        class="text-3xl font-semibold mb-6 flex gap-x-3 items-center text-black/80 dark:text-white/80"
+      >
         <Briefcase class="size-7" />
         Experiencia laboral
       </h2>
@@ -73,15 +81,20 @@ import AboutMe from "../components/AboutMe.astro";
     </SectionContainer>
 
     <SectionContainer id="proyectos">
-      <h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center">
+      <h2
+        class="text-3xl font-semibold mb-6 flex gap-x-3 items-center text-black/80 dark:text-white/80"
+      >
         <CodeIcon class="size-7" />
         Proyectos
       </h2>
       <Projects />
     </SectionContainer>
+
     <SectionContainer id="sobre-mi">
-      <h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center">
-        <AboutMeIcon class="size-7" />
+      <h2
+        class="text-3xl font-semibold mb-6 flex gap-x-3 items-center text-black/80 dark:text-white/80"
+      >
+        <ProfileCheck class="size-7" />
         Sobre mi
       </h2>
       <AboutMe />
