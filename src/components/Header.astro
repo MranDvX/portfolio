@@ -1,3 +1,24 @@
+---
+const navItems = [
+  {
+    title: "Experiencia",
+    url: "/#experiencia",
+  },
+  {
+    title: "Proyectos",
+    url: "/#proyectos",
+  },
+  {
+    title: "Sobre mí",
+    url: "/#sobre-mi",
+  },
+  // {
+  //   title: "Contacto",
+  //   url: "/#contacto",
+  // },
+];
+---
+
 <header
   class={`
     flex justify-center items-center
@@ -11,24 +32,44 @@
   <nav
     class={`
       border border-black rounded-full
-      px-2 py-1
-      flex flex-row
-      bg-black/50
+      px-3 py-1
+      flex flex-row items-center
+      bg-neutral-200 dark:bg-black/50
       backdrop-blur-2xl
     `}
   >
-    <a
-      class="hover:bg-white/10 rounded-full px-3 transition"
-      href="#experiencia">Experiencia</a
-    >
-    <a class="hover:bg-white/10 rounded-full px-3 transition" href="#proyectos"
-      >Proyectos</a
-    >
-    <a class="hover:bg-white/10 rounded-full px-3 transition" href="#sobre-mi"
-      >Sobre mí</a
-    >
-    <!-- <a class="hover:bg-white/10 rounded-full px-3 transition" href="#contacto"
-      >Contacto</a
-    > -->
+    {
+      navItems.map((link) => (
+        <a
+          class="hover:bg-white/10 rounded-full px-2 sm:px-3 transition text-sm sm:text-base"
+          href={link.url}
+        >
+          {link.title}
+        </a>
+      ))
+    }
   </nav>
 </header>
+
+<script>
+  const $navAElements: Element[] = [
+    ...document.querySelectorAll("header nav a"),
+  ];
+
+  window.addEventListener("scroll", () => {
+    $navAElements.forEach((a) => {
+      const selectionForSection = a.getAttribute("href")?.substring(1);
+      const sectionElement: HTMLDivElement | null = document.querySelector(
+        selectionForSection || "",
+      );
+
+      if (!sectionElement) return;
+      const selectionTop = sectionElement.offsetTop - 150;
+      if (window.scrollY <= selectionTop) return;
+      $navAElements.forEach((aToRemove) =>
+        aToRemove.classList.remove("bg-white/15"),
+      );
+      a.classList.add("bg-white/15");
+    });
+  });
+</script>
